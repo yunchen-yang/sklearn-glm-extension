@@ -21,7 +21,7 @@ jobs:
           pip install cibuildwheel twine
 
       - name: Build wheels
-        uses: pypa/cibuildwheel@v2
+        uses: pypa/cibuildwheel@v2.16.5
         env:
           CIBW_BUILD: "cp39-* cp310-* cp311-*"
           CIBW_SKIP: "*musllinux*"
