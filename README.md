@@ -39,6 +39,24 @@ pip install glmext
 
 ---
 
+## Example
+[Example notebook](./notebooks/Example.ipynb)
+```python
+from glmext.glm import NegativeBinomialRegressor
+
+nb = NegativeBinomialRegressor(
+    alpha=0.0,
+    k=2,
+    max_iter=300,
+    tol=1e-7,
+)
+nb.fit(X_train, y_train)
+
+y_pred_nb = nb.predict(X_test)
+```
+
+---
+
 ## Mathematical Reference (Negative Binomial GLM)
 
 We use the **NB2 parameterization**, where the conditional variance is
@@ -119,7 +137,7 @@ We parameterize the mean using a **log link**:
 log(μ) = raw_prediction
 ```
 
-⚠️ **Important:**
+**Important:**
 
 - This is **not** the canonical link for the Negative Binomial distribution.
 - We intentionally work in log-mean (`log μ`) space for numerical stability and ease of optimization.
