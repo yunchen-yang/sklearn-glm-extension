@@ -5,6 +5,10 @@ on:
     workflows: ["Publish to TestPyPI"]
     types:
       - completed
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
 
 jobs:
   publish:
